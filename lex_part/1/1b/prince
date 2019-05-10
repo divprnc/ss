@@ -1,0 +1,26 @@
+%{
+	prince kumar
+	#include<stdio.h>
+	int cc=0;
+	sadkjfaskjdfkasjfd
+%}
+
+%x C
+%% 
+"" {BEGIN Ccc++}
+<C>
+<C>\n
+<C>"" {BEGIN 0;}
+%%
+
+int main(int argc,char **argv)
+{
+
+	FILE *fp1 ,*fp2;
+	yyin = fopen(argv[1],"r");
+	yyout = fopen(argv[2],"w");
+	yylex();
+	printf("\nNumber of comments line are: %d\n",cc);
+	return 0;
+}
+
